@@ -12,7 +12,7 @@ body {
 }
 
 .bg-dark {
-  background-color: var(--color-black) !important;
+  background: var(--color-black-glossy) !important;
 }
 
 .text-gold {

@@ -1,12 +1,14 @@
 :root {
   /* Couleurs principales */
   --color-black: #121212;
-  --color-gold: #d4af37;
+  --color-gold: #ffdd00;
   --color-gold-light: #e5c76b;
   --color-gold-dark: #c5a028;
   --color-white: #ffffff;
   --color-gray-light: #f8f9fa;
   --color-gray: #6c757d;
+  --color-black-glossy: linear-gradient(145deg, #1a1a1a, #121212);
+  --color-black-glossy-hover: linear-gradient(145deg, #222222, #151515);
 
   /* Espacements */
   --spacing-xs: 0.5rem;
