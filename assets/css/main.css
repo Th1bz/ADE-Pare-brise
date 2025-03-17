@@ -1,0 +1,48 @@
+/* Importation des fichiers CSS */
+@import url("variables.css");
+@import url("navbar.css");
+@import url("promo.css");
+@import url("contact.css");
+
+/* Styles généraux */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-black);
+  color: #333;
+}
+
+.text-gold {
+  color: var(--color-gold) !important;
+}
+
+.bg-gold {
+  background-color: var(--color-gold) !important;
+}
+
+.bg-dark-custom {
+  background-color: var(--color-black) !important;
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-black);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-dark);
+  border-color: var(--color-gold-dark);
+  color: var(--color-black);
+}
+
+/* Section styles */
+.section {
+  padding: 4rem 0;
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem 0;
+}

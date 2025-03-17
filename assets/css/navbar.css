@@ -1,0 +1,75 @@
+.navbar-custom {
+  background-color: var(--color-black);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--color-gold) !important;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-custom .nav-link {
+  color: var(--color-white);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--color-gold);
+}
+
+.navbar-custom .nav-link.active {
+  color: var(--color-gold);
+}
+
+.navbar-custom .nav-link.active:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--color-gold);
+}
+
+.navbar-toggler {
+  border-color: var(--color-gold);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(212, 175, 55, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.nav-contact-btn {
+  background-color: var(--color-gold);
+  color: var(--color-black) !important;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem !important;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.nav-contact-btn:hover {
+  background-color: var(--color-gold-dark);
+  color: var(--color-black) !important;
+}
+
+/* Effet de dégradé pour la navbar lors du scroll */
+.navbar-scrolled {
+  background: linear-gradient(
+    to right,
+    var(--color-black),
+    rgba(25, 25, 25, 0.98)
+  );
+}

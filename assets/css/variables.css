@@ -1,0 +1,23 @@
+:root {
+  /* Couleurs principales */
+  --color-black: #121212;
+  --color-gold: #d4af37;
+  --color-gold-light: #e5c76b;
+  --color-gold-dark: #c5a028;
+  --color-white: #ffffff;
+  --color-gray-light: #f8f9fa;
+  --color-gray: #6c757d;
+
+  /* Espacements */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+
+  /* Breakpoints - correspondant à Bootstrap */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}

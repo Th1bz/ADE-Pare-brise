@@ -1,0 +1,185 @@
+.hero-section {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 8rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 2;
+  padding: 2rem;
+  border-radius: 10px;
+  color: var(--color-white);
+  background-color: rgba(18, 18, 18, 0.162);
+  border-left: 3px solid var(--color-gold);
+}
+
+.hero-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: var(--color-gold);
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  border: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: var(--color-gold-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-contact {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  border: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.services-section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--color-gold);
+}
+
+/* Styles des cartes de service par défaut (vue complète pour écrans petits) */
+.service-card {
+  background: rgb(229, 199, 107);
+  background: linear-gradient(
+    0deg,
+    rgba(229, 199, 107, 0.89) 0%,
+    rgba(18, 18, 18, 1) 5%
+  );
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  position: relative;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card-body {
+  padding: 2rem;
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.service-card-title {
+  color: var(--color-white);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-card-text {
+  color: var(--color-gray);
+  margin-bottom: 1.5rem;
+}
+
+.promo-banner {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.promo-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.promo-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.promo-btn {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.promo-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .service-section {
+    padding: 0;
+  }
+
+  .section-title {
+    display: none;
+  }
+
+  .service-card {
+    height: auto;
+  }
+
+  .service-card-title {
+    display: none;
+  }
+
+  .service-card-text {
+    display: none;
+  }
+
+  .service-card-body a {
+    display: none;
+  }
+
+  .service-card-body {
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .service-icon {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+  }
+}
