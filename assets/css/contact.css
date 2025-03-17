@@ -104,30 +104,3 @@
   border: 1px solid #dc3545;
   color: #dc3545;
 }
-
-/* Styles pour le select et ses options */
-.contact-form .form-select {
-  border: 1px solid #e9e9e9;
-  padding: 0.8rem 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.contact-form .form-select:focus {
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
-}
-
-/* Correction des styles pour les options du select sur mobile */
-@media (max-width: 768px) {
-  select.form-select {
-    font-size: 16px; /* Taille de police optimale pour mobile */
-    width: 100%;
-    padding: 0.8rem 1rem;
-  }
-
-  /* S'assurer que les options sont correctement alignées et dimensionnées */
-  select.form-select option {
-    font-size: 16px;
-    padding: 10px;
-  }
-}
