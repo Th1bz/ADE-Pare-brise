@@ -45,6 +45,10 @@ const CONFIG = {
 
 // Validation de l'email
 function isValidEmail(email) {
+  // Si l'email est vide et non obligatoire, on le considère comme valide
+  if (!email || email.trim() === "") {
+    return true;
+  }
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
 }
@@ -68,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
           this.setCustomValidity(CONFIG.invalidEmailMessage);
         }
       } else {
+        // Le champ est vide mais c'est accepté car optionnel
         emailGroup.classList.remove(CONFIG.validClass, CONFIG.invalidClass);
         this.setCustomValidity("");
       }
@@ -82,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Vérification de l'email avant l'envoi
       const emailInput = document.querySelector(CONFIG.emailSelector);
-      if (!isValidEmail(emailInput.value)) {
+      if (emailInput.value.trim() !== "" && !isValidEmail(emailInput.value)) {
         emailInput.closest(".form-group").classList.add(CONFIG.invalidClass);
         emailInput.setCustomValidity(CONFIG.invalidEmailMessage);
         emailInput.reportValidity();
@@ -97,12 +102,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Préparation des paramètres
       const templateParams = {
-        from_name: document.querySelector(CONFIG.nameSelector).value,
-        from_email: document.querySelector(CONFIG.emailSelector).value,
-        from_phone: document.querySelector(CONFIG.phoneSelector).value,
-        subject: document.querySelector(CONFIG.subjectSelector).value,
-        from_immat: document.querySelector(CONFIG.immatSelector).value,
-        message: document.querySelector(CONFIG.messageSelector).value,
+        from_name:
+          document.querySelector(CONFIG.nameSelector).value || "Non spécifié",
+        from_email:
+          document.querySelector(CONFIG.emailSelector).value || "Non spécifié",
+        from_phone:
+          document.querySelector(CONFIG.phoneSelector).value || "Non spécifié",
+        subject:
+          document.querySelector(CONFIG.subjectSelector).value ||
+          "Non spécifié",
+        from_immat:
+          document.querySelector(CONFIG.immatSelector).value || "Non spécifié",
+        message:
+          document.querySelector(CONFIG.messageSelector).value ||
+          "Non spécifié",
       };
 
       // Envoi de l'email
