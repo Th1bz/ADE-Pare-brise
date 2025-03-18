@@ -16,6 +16,33 @@ document.addEventListener("DOMContentLoaded", function () {
     return new bootstrap.Popover(popoverTriggerEl);
   });
 
+  // Récupération des éléments de la navbar
+  const navbarCollapse = document.getElementById("navbarNav");
+  const navbarToggler = document.querySelector(".navbar-toggler");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  const bsNavbarCollapse = navbarCollapse
+    ? new bootstrap.Collapse(navbarCollapse, { toggle: false })
+    : null;
+
+  // Fonction pour fermer la navbar
+  function closeNavbar() {
+    if (
+      window.innerWidth < 992 &&
+      navbarCollapse &&
+      navbarCollapse.classList.contains("show")
+    ) {
+      bsNavbarCollapse.hide();
+    }
+  }
+
+  // Fermeture de la navbar au clic sur un lien
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeNavbar);
+  });
+
+  // Fermeture de la navbar au scroll
+  window.addEventListener("scroll", closeNavbar);
+
   // Effet de scroll smooth pour les ancres
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
