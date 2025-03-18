@@ -3,6 +3,12 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-logo {
+  width: 100px;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
 .navbar-brand {
   font-weight: 700;
   color: var(--color-gold) !important;
