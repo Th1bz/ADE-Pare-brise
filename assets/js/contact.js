@@ -1,67 +1,149 @@
-// Initialisation d'EmailJS
+/**
+ * Gestion du formulaire de contact avec EmailJS
+ * Ce fichier gère la validation et l'envoi du formulaire de contact
+ */
+
+// Configuration EmailJS - À personnaliser pour chaque projet
+const CONFIG = {
+  // Clés EmailJS
+  publicKey: "mh5eXufnjB0nUD51Q",
+  serviceID: "service_i7f40in",
+  templateID: "template_ely3er1",
+
+  // Sélecteurs
+  formSelector: "#contactForm",
+  nameSelector: "#name",
+  emailSelector: "#email",
+  phoneSelector: "#phone",
+  subjectSelector: "#subject",
+  immatSelector: "#immatriculation",
+  messageSelector: "#message",
+  submitButtonSelector: 'button[type="submit"]',
+
+  // Classes CSS
+  validClass: "valid",
+  invalidClass: "invalid",
+  successClass: "btn-success",
+  dangerClass: "btn-danger",
+  primaryClass: "btn-primary",
+
+  // Messages
+  invalidEmailMessage: "Veuillez entrer une adresse email valide",
+  loadingMessage: '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...',
+  successMessage: '<i class="fas fa-check"></i> Message envoyé !',
+  errorMessage:
+    '<i class="fas fa-exclamation-triangle"></i> Erreur lors de l\'envoi',
+
+  // Délais (en ms)
+  resetDelay: 3000,
+};
+
+// Initialisation de EmailJS avec la clé publique
 (function () {
-  // Remplacer par votre User ID EmailJS
-  emailjs.init("VOTRE_USER_ID_EMAILJS");
+  emailjs.init(CONFIG.publicKey);
 })();
 
+// Validation de l'email
+function isValidEmail(email) {
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+// Initialisation du formulaire de contact
 document.addEventListener("DOMContentLoaded", function () {
-  // Récupération du formulaire
-  const contactForm = document.getElementById("contactForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const successMessage = document.getElementById("feedbackSuccess");
-  const errorMessage = document.getElementById("feedbackError");
+  // Gestion de la validation de l'email en temps réel
+  const emailInput = document.querySelector(CONFIG.emailSelector);
+  if (emailInput) {
+    emailInput.addEventListener("input", function () {
+      const emailGroup = this.closest(".form-group");
 
-  // Masquer les messages au chargement
-  successMessage.style.display = "none";
-  errorMessage.style.display = "none";
+      if (this.value.length > 0) {
+        if (isValidEmail(this.value)) {
+          emailGroup.classList.remove(CONFIG.invalidClass);
+          emailGroup.classList.add(CONFIG.validClass);
+          this.setCustomValidity("");
+        } else {
+          emailGroup.classList.remove(CONFIG.validClass);
+          emailGroup.classList.add(CONFIG.invalidClass);
+          this.setCustomValidity(CONFIG.invalidEmailMessage);
+        }
+      } else {
+        emailGroup.classList.remove(CONFIG.validClass, CONFIG.invalidClass);
+        this.setCustomValidity("");
+      }
+    });
+  }
 
-  contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+  // Gestion du formulaire de contact
+  const contactForm = document.querySelector(CONFIG.formSelector);
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    // Désactiver le bouton pendant l'envoi
-    submitBtn.disabled = true;
-    submitBtn.innerHTML =
-      '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Envoi en cours...';
+      // Vérification de l'email avant l'envoi
+      const emailInput = document.querySelector(CONFIG.emailSelector);
+      if (!isValidEmail(emailInput.value)) {
+        emailInput.closest(".form-group").classList.add(CONFIG.invalidClass);
+        emailInput.setCustomValidity(CONFIG.invalidEmailMessage);
+        emailInput.reportValidity();
+        return;
+      }
 
-    // Préparer les paramètres pour EmailJS
-    const templateParams = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
-    };
+      // Afficher l'indicateur de chargement
+      const submitBtn = this.querySelector(CONFIG.submitButtonSelector);
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = CONFIG.loadingMessage;
+      submitBtn.disabled = true;
 
-    // Remplacer par votre Service ID et Template ID
-    emailjs
-      .send("VOTRE_SERVICE_ID", "VOTRE_TEMPLATE_ID", templateParams)
-      .then(function (response) {
-        // Afficher le message de succès
-        successMessage.style.display = "block";
-        errorMessage.style.display = "none";
+      // Préparation des paramètres
+      const templateParams = {
+        from_name: document.querySelector(CONFIG.nameSelector).value,
+        from_email: document.querySelector(CONFIG.emailSelector).value,
+        from_phone: document.querySelector(CONFIG.phoneSelector).value,
+        subject: document.querySelector(CONFIG.subjectSelector).value,
+        from_immat: document.querySelector(CONFIG.immatSelector).value,
+        message: document.querySelector(CONFIG.messageSelector).value,
+      };
 
-        // Réinitialiser le formulaire
-        contactForm.reset();
+      // Envoi de l'email
+      emailjs.send(CONFIG.serviceID, CONFIG.templateID, templateParams).then(
+        function () {
+          // Succès
+          submitBtn.innerHTML = CONFIG.successMessage;
+          submitBtn.classList.remove(CONFIG.primaryClass);
+          submitBtn.classList.add(CONFIG.successClass);
 
-        // Réactiver le bouton
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "Envoyer";
+          // Réinitialiser le formulaire
+          contactForm.reset();
 
-        // Masquer le message après 5 secondes
-        setTimeout(function () {
-          successMessage.style.display = "none";
-        }, 5000);
-      })
-      .catch(function (error) {
-        // Afficher le message d'erreur
-        errorMessage.style.display = "block";
-        successMessage.style.display = "none";
+          // Supprimer toutes les classes de validation des champs du formulaire
+          const formGroups = contactForm.querySelectorAll(".form-group");
+          formGroups.forEach((group) => {
+            group.classList.remove(CONFIG.validClass, CONFIG.invalidClass);
+          });
 
-        // Réactiver le bouton
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = "Envoyer";
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.classList.remove(CONFIG.successClass);
+            submitBtn.classList.add(CONFIG.primaryClass);
+            submitBtn.disabled = false;
+          }, CONFIG.resetDelay);
+        },
+        function (error) {
+          // Erreur
+          console.error("Erreur:", error);
+          submitBtn.innerHTML = CONFIG.errorMessage;
+          submitBtn.classList.remove(CONFIG.primaryClass);
+          submitBtn.classList.add(CONFIG.dangerClass);
 
-        console.error("Erreur:", error);
-      });
-  });
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.classList.remove(CONFIG.dangerClass);
+            submitBtn.classList.add(CONFIG.primaryClass);
+            submitBtn.disabled = false;
+          }, CONFIG.resetDelay);
+        }
+      );
+    });
+  }
 });
