@@ -40,7 +40,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#accueil">
           <img
             src="assets/images/ADE-logo-dark 1.svg"
             alt="ADE Pare-brise Logo"
@@ -61,16 +61,24 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#accueil">Accueil</a>
+              <a class="nav-link active" href="#accueil"
+                ><i class="fas fa-home"></i> Accueil</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#services">Nos services</a>
+              <a class="nav-link" href="#services"
+                ><i class="fas fa-wrench"></i> Nos services</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#promotions">Promotions</a>
+              <a class="nav-link" href="#promotions"
+                ><i class="fas fa-percent"></i> Promotions</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact"
+                ><i class="fas fa-phone-alt"></i> Contact</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link nav-contact-btn" href="tel:0684602936">
@@ -134,7 +142,12 @@
             <div class="promo-highlight">Jusqu'à 350€ offert !</div>
             <p class="promo-text">
               Il suffit de prendre rendez-vous et nous venons chez-vous !<br />
-              <span class="promo-conditions">*Voir conditions</span>
+              <span
+                class="promo-conditions"
+                data-bs-toggle="modal"
+                data-bs-target="#conditionsModal"
+                >*Voir conditions</span
+              >
             </p>
             <a href="#contact" class="btn promo-btn">Profiter de l'offre</a>
           </div>
@@ -252,7 +265,7 @@
     </section>
 
     <!-- Promo Banner -->
-    <section class="promo-banner">
+    <section id="promotions2" class="promo-banner">
       <div class="container">
         <div class="promo-content">
           <div class="promo-badge">Nouveau</div>
@@ -260,7 +273,12 @@
           <div class="promo-highlight">Jusqu'à 350€ offert !</div>
           <p class="promo-text">
             Il suffit de prendre rendez-vous et nous venons chez-vous !<br />
-            <span class="promo-conditions">*Voir conditions</span>
+            <span
+              class="promo-conditions"
+              data-bs-toggle="modal"
+              data-bs-target="#conditionsModal"
+              >*Voir conditions</span
+            >
           </p>
           <a href="#contact" class="btn promo-btn">Profiter de l'offre</a>
         </div>
@@ -387,7 +405,13 @@
                 <div class="contact-info-icon">
                   <i class="fas fa-envelope"></i>
                 </div>
-                <div class="contact-info-text">ade.parebrise67@gmail.com</div>
+                <div class="contact-info-text">
+                  <a
+                    href="mailto:ade.parebrise67@gmail.com"
+                    class="text-decoration-none text-white"
+                    >ade.parebrise67@gmail.com</a
+                  >
+                </div>
               </div>
               <div class="contact-info-item">
                 <div class="contact-info-icon">
@@ -396,17 +420,23 @@
                 <div class="contact-info-text">24h/24, 7j/7</div>
               </div>
               <div class="social-icons">
-                <a href="#" class="social-icon text-decoration-none"
-                  ><i class="fab fa-facebook-f"></i
+                <a
+                  href="https://www.facebook.com/profile.php?id=61574012774274"
+                  class="social-icon text-decoration-none"
+                  target="_blank"
+                  ><i class="fab fa-facebook-f" alt="Facebook"></i
                 ></a>
-                <a href="#" class="social-icon text-decoration-none"
-                  ><i class="fab fa-twitter"></i
+                <a
+                  href="https://www.instagram.com/adeparebrise/"
+                  class="social-icon text-decoration-none"
+                  target="_blank"
+                  ><i class="fab fa-instagram" alt="Instagram"></i
                 ></a>
-                <a href="#" class="social-icon text-decoration-none"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a href="#" class="social-icon text-decoration-none"
-                  ><i class="fab fa-snapchat-ghost"></i
+                <a
+                  href="https://www.snapchat.com/add/adeparebrise?share_id=PM5Pr3AlPWs&locale=fr-FR"
+                  class="social-icon text-decoration-none"
+                  target="_blank"
+                  ><i class="fab fa-snapchat-ghost" alt="Snapchat"></i
                 ></a>
               </div>
             </div>
@@ -457,11 +487,24 @@
             </ul>
           </div>
         </div>
-        <hr class="mt-4 mb-4" style="border-color: rgba(255, 255, 255, 0.1)" />
-        <div class="row">
-          <div class="col-md-6 text-center text-md-start">
+        <hr class="mt-4 mb-4" style="border-color: var(--color-gold)" />
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between align-items-center w-100"
+        >
+          <div class="mb-3 mb-md-0">
             <p class="mb-0">
               &copy; 2025 ADE Pare-brise. Tous droits réservés.
+            </p>
+          </div>
+          <div>
+            <p class="mb-0">
+              <a
+                href="https://th1bz.github.io"
+                target="_blank"
+                class="text-white text-decoration-none"
+              >
+                Made with <i class="fas fa-heart text-gold"></i> by Th1bz</a
+              >
             </p>
           </div>
         </div>
@@ -474,5 +517,107 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/contact.js"></script>
+
+    <!-- Modal Conditions Offre -->
+    <div
+      class="modal fade"
+      id="conditionsModal"
+      tabindex="-1"
+      aria-labelledby="conditionsModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="conditionsModalLabel">
+              Conditions de l'offre commerciale
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fermer"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="conditions-content">
+              <p>
+                Les offres commerciales sont proposées pour tout remplacement de
+                pare-brise et pour tout client assuré bris de glace n'ayant pas
+                de franchise dans la garantie bris de glace de son contrat
+                d'assurance.
+              </p>
+
+              <p>
+                Une offre commerciale n'est cumulable ni avec une autre offre
+                commerciale ni avec une remise accordée sur la facture.
+              </p>
+
+              <p>
+                Les offres commerciales sont valables dans la limite des stocks
+                disponibles. En cas d'indisponibilité de l'offre, le client
+                bénéficie d'une carte cadeau d'une valeur équivalente à l'offre
+                commerciale retenue.
+              </p>
+
+              <p>
+                La remise de l'offre commerciale est conditionnée au règlement
+                de l'intégralité de la facture.
+              </p>
+
+              <p>
+                À réception du règlement intégral de la facture, la société ADE
+                PARE-BRISE met à disposition du client l'offre commerciale
+                retenue dans les meilleurs délais en tenant compte du temps de
+                traitement administratif nécessaire.
+              </p>
+
+              <p>
+                Tout client disposant d'une franchise bris de glace dans son
+                contrat d'assurance et souhaitant bénéficier d'une offre
+                commerciale doit s'acquitter, auprès de la société ADE
+                PARE-BRISE, du montant de sa franchise. Le client dispose d'un
+                délai de 2 mois, à compter de la date de réception du règlement
+                par la compagnie d'assurance, pour s'acquitter du montant
+                intégral de sa franchise. À expiration de ce délai, la franchise
+                est prise en charge par ADE PARE-BRISE et le client ne peut plus
+                prétendre à bénéficier de l'offre commerciale qu'il a
+                initialement retenue.
+              </p>
+
+              <p>
+                En l'absence de prise en charge de la facture par la compagnie
+                d'assurance pour quelque motif que ce soit (absence de garantie
+                bris de glace au contrat, cotisations d'assurance non réglées,
+                …), l'intégralité de la facture est à la charge du client. À
+                défaut de paiement de celle-ci 8 jours après la 1ère
+                présentation d'une mise en demeure en lettre recommandée avec
+                accusé réception, le client perd le bénéfice de l'offre
+                commerciale.
+              </p>
+
+              <p>
+                La perte du bénéfice de l'offre commerciale est justifiée par
+                les coûts administratifs et judiciaires supportés par la société
+                ADE PARE-BRISE pour recouvrer les sommes dues. La perte du
+                bénéfice de l'offre commerciale n'exonère pas le client du
+                règlement de l'intégralité de la facture.
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-modal-close"
+              data-bs-dismiss="modal"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

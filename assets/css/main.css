@@ -11,6 +11,31 @@ body {
   color: #333;
 }
 
+/* Personnalisation de la barre de défilement */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-gold);
+  border-radius: 6px;
+  border: 2px solid var(--color-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-gold-dark);
+}
+
+/* Pour Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) var(--color-black);
+}
+
 .bg-dark {
   background: var(--color-black-glossy) !important;
 }
@@ -234,4 +259,56 @@ footer {
   .hero-subtitle {
     font-size: 1rem;
   }
+}
+
+/* Modal Conditions */
+.modal-content {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 1px solid var(--color-gold);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--color-black);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--color-black);
+}
+
+.modal-title {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.conditions-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.promo-conditions {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--color-black);
+  transition: all 0.3s ease;
+}
+
+.promo-conditions:hover {
+  scale: 1.05;
+}
+
+/* Bouton fermer modal */
+.btn-close {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+}
+.btn-modal-close {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
 }

@@ -53,7 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
-        targetElement.scrollIntoView({
+        // Calculer l'offset à appliquer (hauteur de la navbar + marge supplémentaire)
+        const navbarHeight =
+          document.querySelector(".navbar-custom").offsetHeight;
+        const offset = navbarHeight + 20; // 20px de marge supplémentaire
+
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - offset,
           behavior: "smooth",
         });
       }
