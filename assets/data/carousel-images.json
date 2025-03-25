@@ -5,7 +5,7 @@
       "src": "assets/images/photo-pare-brise-1.jpg",
       "alt": "Remplacement pare-brise",
       "title": "Service de remplacement",
-      "description": "Remplacement professionnel de pare-brise à domicile"
+      "description": "Remplacement de vitrage sur lieu choisi"
     },
     {
       "id": 2,
@@ -19,7 +19,14 @@
       "src": "assets/images/photo-pare-brise-3.jpg",
       "alt": "Vitrage automobile",
       "title": "Vitrage automobile",
-      "description": "Remplacement de tout type de vitrage automobile"
+      "description": "Remplacement professionnel de pare-brise à domicile"
+    },
+    {
+      "id": 4,
+      "src": "assets/images/photo-camion-vitrage.jpeg",
+      "alt": "Vitrage camion",
+      "title": "Vitrage de tout type de véhicules",
+      "description": "Remplacement professionnel de vitrage de toutes marques, tailles et types"
     }
   ]
 }
