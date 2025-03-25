@@ -70,12 +70,3 @@
   background-color: var(--color-gold-dark);
   color: var(--color-black) !important;
 }
-
-/* Effet de dégradé pour la navbar lors du scroll */
-.navbar-scrolled {
-  background: linear-gradient(
-    to right,
-    var(--color-black),
-    rgba(25, 25, 25, 0.98)
-  );
-}

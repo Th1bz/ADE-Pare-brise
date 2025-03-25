@@ -109,9 +109,9 @@
 .promo-banner {
   background: linear-gradient(
     135deg,
-    var(--color-gold-dark),
+    var(--color-gold-light),
     var(--color-gold),
-    var(--color-gold-light)
+    var(--color-gold)
   );
   color: var(--color-black);
   padding: 4rem 0;

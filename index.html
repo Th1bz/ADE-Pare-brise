@@ -38,7 +38,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#accueil">
           <img
@@ -121,38 +121,92 @@
             </div>
             <div class="col-md-6 d-none d-md-block">
               <div class="hero-image-container">
-                <!-- Ici on pourrait ajouter une image de voiture ou de pare-brise -->
-                <img
-                  src="assets/images/voiture-hero.svg"
-                  alt="ADE Pare-brise"
-                  class="hero-image"
-                />
+                <div
+                  id="heroCarousel"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <!-- Indicateurs -->
+                  <div class="carousel-indicators">
+                    <button
+                      type="button"
+                      data-bs-target="#heroCarousel"
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#heroCarousel"
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#heroCarousel"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
+                  </div>
+
+                  <!-- Slides -->
+                  <div class="carousel-inner">
+                    <!-- Les slides seront injectés ici par JavaScript -->
+                  </div>
+
+                  <!-- Contrôles -->
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Précédent</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#heroCarousel"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Suivant</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Promo Banner -->
-      <section id="promotions" class="promo-banner">
-        <div class="container">
-          <div class="promo-content">
-            <div class="promo-badge">Nouveau</div>
-            <h2 class="promo-title">Offre spéciale</h2>
-            <div class="promo-highlight">Jusqu'à 350€ offert !</div>
-            <p class="promo-text">
-              Il suffit de prendre rendez-vous et nous venons chez-vous !<br />
-              <span
-                class="promo-conditions"
-                data-bs-toggle="modal"
-                data-bs-target="#conditionsModal"
-                >*Voir conditions</span
-              >
-            </p>
-            <a href="#contact" class="btn promo-btn">Profiter de l'offre</a>
-          </div>
+    <!-- Promo Banner -->
+    <section id="promotions" class="promo-banner">
+      <div class="container">
+        <div class="promo-content">
+          <div class="promo-badge">Nouveau</div>
+          <h2 class="promo-title">Offre spéciale</h2>
+          <div class="promo-highlight">Jusqu'à 350€ offert !</div>
+          <p class="promo-text">
+            Il suffit de prendre rendez-vous et nous venons chez-vous !<br />
+            <span
+              class="promo-conditions"
+              data-bs-toggle="modal"
+              data-bs-target="#conditionsModal"
+              >*Voir conditions</span
+            >
+          </p>
+          <a href="#contact" class="btn promo-btn">Profiter de l'offre</a>
         </div>
-      </section>
+      </div>
     </section>
 
     <!-- Section info -->
@@ -376,7 +430,7 @@
                 <button type="submit" id="submitBtn" class="btn contact-btn">
                   Envoyer
                 </button>
-                <p class="text-muted mt-2 small">* Champs obligatoires</p>
+                <p class="text-gold mt-2 small">* Champs obligatoires</p>
               </form>
             </div>
           </div>
@@ -517,6 +571,7 @@
     <!-- Custom JS -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/contact.js"></script>
+    <script src="assets/js/carousel.js"></script>
 
     <!-- Modal Conditions Offre -->
     <div
