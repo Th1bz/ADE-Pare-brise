@@ -100,7 +100,7 @@ async function loadCarouselImages() {
 
       slide.innerHTML = `
         <img src="${image.src}" class="d-block w-100 hero-image" loading="lazy" alt="${image.alt}">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption">
           <h5>${image.title}</h5>
           <p>${image.description}</p>
         </div>

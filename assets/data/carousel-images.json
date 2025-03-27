@@ -8,11 +8,25 @@
       "description": "Remplacement de vitrage sur lieu choisi"
     },
     {
+      "id": 1,
+      "src": "assets/images/photo-bmw.jpeg",
+      "alt": "Remplacement pare-brise",
+      "title": "Service de remplacement",
+      "description": "Remplacement de vitrage à domicile"
+    },
+    {
       "id": 2,
       "src": "assets/images/photo-pare-brise-2.jpg",
       "alt": "Réparation d'impact",
       "title": "Réparation d'impacts",
       "description": "Réparation rapide et efficace de tous types d'impacts"
+    },
+    {
+      "id": 3,
+      "src": "assets/images/photo-bmw-cabriolet.jpeg",
+      "alt": "Vitrage automobile",
+      "title": "Vitrage automobile",
+      "description": "Remplacement professionnel de pare-brise à domicile"
     },
     {
       "id": 3,

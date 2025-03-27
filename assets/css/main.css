@@ -184,6 +184,10 @@ body {
   margin-bottom: 0;
 }
 
+.carousel-indicators {
+  bottom: -10px;
+}
+
 .carousel-indicators button {
   background-color: var(--color-gold) !important;
   height: 3px !important;
@@ -286,11 +290,38 @@ footer {
 
 @media (max-width: 768px) {
   .hero-section {
-    text-align: center;
+    margin-top: 56px;
   }
 
-  .hero-logo {
-    margin: 0 auto 1.5rem;
+  .hero-image-container {
+    min-height: 300px;
+    margin-top: 2rem;
+  }
+
+  .carousel-item {
+    height: 300px;
+  }
+
+  .carousel-caption {
+    display: block !important;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    bottom: 10px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    padding: 5px;
+    background-color: rgba(212, 175, 55, 0.8);
   }
 }
 
@@ -347,26 +378,8 @@ footer {
   line-height: 1.6;
 }
 
-.promo-conditions {
-  text-decoration: underline;
-  cursor: pointer;
-  color: var(--color-black);
-  transition: all 0.3s ease;
-}
-
-.promo-conditions:hover {
-  scale: 1.05;
-}
-
 /* Bouton fermer modal */
 .btn-close {
-  background-color: var(--color-gold);
-  color: var(--color-black);
-  font-weight: 600;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
-}
-.btn-modal-close {
   background-color: var(--color-gold);
   color: var(--color-black);
   font-weight: 600;
