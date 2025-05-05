@@ -2,41 +2,48 @@
   "images": [
     {
       "id": 1,
-      "src": "assets/images/photo-pare-brise-1.jpg",
+      "src": "assets/images/Cammionette_ADE_avant.jpeg",
       "alt": "Remplacement pare-brise",
       "title": "Service de remplacement",
       "description": "Remplacement de vitrage sur lieu choisi"
     },
     {
-      "id": 1,
+      "id": 2,
+      "src": "assets/images/Vitrage_porsche.jpeg",
+      "alt": "Remplacement pare-brise",
+      "title": "Service de remplacement",
+      "description": "Remplacement de vitrage à domicile"
+    },
+    {
+      "id": 3,
       "src": "assets/images/photo-bmw.jpeg",
       "alt": "Remplacement pare-brise",
       "title": "Service de remplacement",
       "description": "Remplacement de vitrage à domicile"
     },
     {
-      "id": 2,
-      "src": "assets/images/photo-pare-brise-2.jpg",
-      "alt": "Réparation d'impact",
-      "title": "Réparation d'impacts",
-      "description": "Réparation rapide et efficace de tous types d'impacts"
-    },
-    {
-      "id": 3,
+      "id": 4,
       "src": "assets/images/photo-bmw-cabriolet.jpeg",
       "alt": "Vitrage automobile",
       "title": "Vitrage automobile",
       "description": "Remplacement professionnel de pare-brise à domicile"
     },
     {
-      "id": 3,
-      "src": "assets/images/photo-pare-brise-3.jpg",
+      "id": 5,
+      "src": "assets/images/Vitrage_fiat500.jpeg",
       "alt": "Vitrage automobile",
       "title": "Vitrage automobile",
       "description": "Remplacement professionnel de pare-brise à domicile"
     },
     {
-      "id": 4,
+      "id": 6,
+      "src": "assets/images/Vitrage_professionnel.jpeg",
+      "alt": "Vitrage professionnel",
+      "title": "Vitrage professionnel",
+      "description": "Remplacement de vitrage pour véhicules professionnels"
+    },
+    {
+      "id": 7,
       "src": "assets/images/photo-camion-vitrage.jpeg",
       "alt": "Vitrage camion",
       "title": "Vitrage de tout type de véhicules",
