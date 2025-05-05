@@ -98,12 +98,20 @@ async function loadCarouselImages() {
       const slide = document.createElement("div");
       slide.className = `carousel-item ${index === 0 ? "active" : ""}`;
 
+      // Création du contenu de la légende si elle existe
+      let captionHTML = "";
+      if (image.title || image.description) {
+        captionHTML = `
+          <div class="carousel-caption">
+            ${image.title ? `<h5>${image.title}</h5>` : ""}
+            ${image.description ? `<p>${image.description}</p>` : ""}
+          </div>
+        `;
+      }
+
       slide.innerHTML = `
         <img src="${image.src}" class="d-block w-100 hero-image" loading="lazy" alt="${image.alt}">
-        <div class="carousel-caption">
-          <h5>${image.title}</h5>
-          <p>${image.description}</p>
-        </div>
+        ${captionHTML}
       `;
 
       carouselInner.appendChild(slide);
