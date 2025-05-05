@@ -35,6 +35,22 @@
   color: var(--color-gray);
 }
 
+/* Style pour l'input date */
+.contact-form input[type="date"] {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1) sepia(100%) saturate(10000%) hue-rotate(26deg);
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
 .contact-btn {
   background-color: var(--color-gold);
   color: var(--color-black);

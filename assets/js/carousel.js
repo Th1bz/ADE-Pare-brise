@@ -109,10 +109,18 @@ async function loadCarouselImages() {
         `;
       }
 
+      // Ajouter l'attribut loading="lazy" pour optimiser le chargement
       slide.innerHTML = `
         <img src="${image.src}" class="d-block w-100 hero-image" loading="lazy" alt="${image.alt}">
         ${captionHTML}
       `;
+
+      // Détection d'iOS pour ajustements spécifiques
+      const isIOS =
+        /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      if (isIOS) {
+        slide.classList.add("ios-device");
+      }
 
       carouselInner.appendChild(slide);
     });

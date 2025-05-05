@@ -334,6 +334,26 @@
                       placeholder="ex: AA-000-AA"
                     />
                   </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="rdv_date" class="form-label"
+                      >Date de rendez-vous souhaitée</label
+                    >
+                    <input type="date" class="form-control" id="rdv_date" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="rdv_moment" class="form-label"
+                      >Moment de la journée</label
+                    >
+                    <select class="form-select form-control" id="rdv_moment">
+                      <option value="" selected disabled class="text-gray">
+                        Choisir un moment
+                      </option>
+                      <option value="matin">Matin</option>
+                      <option value="apres-midi">Après-midi</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Message</label>
@@ -465,6 +485,16 @@
                   Conditions de l'offre spéciale *
                 </a>
               </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white text-decoration-none"
+                  data-bs-toggle="modal"
+                  data-bs-target="#mentionsModal"
+                >
+                  Mentions légales
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -484,7 +514,7 @@
                 target="_blank"
                 class="text-white text-decoration-none"
               >
-                Made with by Th1bz</a
+                Made by Th1bz</a
               >
             </p>
           </div>
@@ -598,6 +628,53 @@
             >
               Fermer
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Mentions Légales -->
+    <div
+      class="modal fade"
+      id="mentionsModal"
+      tabindex="-1"
+      aria-labelledby="mentionsModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mentionsModalLabel">
+              Mentions légales
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fermer"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              <strong>Éditeur ADE PARE-BRISE</strong>
+              <br />
+              Adresse 11 rue des bonnes gens Obernai 67210
+              <br />
+              Forme de la société SASU
+              <br />
+              Capital social 6000€
+              <br />
+              Numéro RCS Saverne 92945222500014
+              <br />
+              Numéro de téléphone 0684602936
+              <br />
+              Adresse de courrier électronique
+              <a href="mailto:ade.parebrise67@gmail.com"
+                >ade.parebrise67@gmail.com</a
+              >
+            </p>
           </div>
         </div>
       </div>

@@ -17,6 +17,8 @@ const CONFIG = {
   phoneSelector: "#phone",
   subjectSelector: "#subject",
   immatSelector: "#immatriculation",
+  rdvDateSelector: "#rdv_date",
+  rdvMomentSelector: "#rdv_moment",
   messageSelector: "#message",
   submitButtonSelector: 'button[type="submit"]',
 
@@ -82,6 +84,27 @@ document.addEventListener("DOMContentLoaded", function () {
   // Gestion du formulaire de contact
   const contactForm = document.querySelector(CONFIG.formSelector);
   if (contactForm) {
+    // Ouverture automatique du calendrier au clic sur le champ date
+    const dateInput = document.querySelector(CONFIG.rdvDateSelector);
+    if (dateInput) {
+      dateInput.addEventListener("click", function () {
+        // Crée et déclenche un événement de clic sur l'icône du calendrier
+        const clickEvent = new MouseEvent("mousedown", {
+          bubbles: true,
+          cancelable: true,
+          view: window,
+        });
+
+        // L'événement spécial showPicker est plus fiable sur les navigateurs modernes
+        if (typeof this.showPicker === "function") {
+          this.showPicker();
+        } else {
+          // Solution de repli pour les navigateurs plus anciens
+          this.focus();
+        }
+      });
+    }
+
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -113,6 +136,12 @@ document.addEventListener("DOMContentLoaded", function () {
           "Non spécifié",
         from_immat:
           document.querySelector(CONFIG.immatSelector).value || "Non spécifié",
+        rdv_date:
+          document.querySelector(CONFIG.rdvDateSelector).value ||
+          "Non spécifié",
+        rdv_moment:
+          document.querySelector(CONFIG.rdvMomentSelector).value ||
+          "Non spécifié",
         message:
           document.querySelector(CONFIG.messageSelector).value ||
           "Non spécifié",

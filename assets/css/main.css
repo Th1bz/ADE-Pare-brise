@@ -172,6 +172,14 @@ body {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 15px;
+  max-height: 50%;
+  overflow: auto;
+  width: auto;
+  display: inline-block;
+  max-width: 80%;
+  margin: 0 auto;
+  left: 10%;
+  right: 10%;
 }
 
 .carousel-caption h5 {
@@ -304,10 +312,14 @@ footer {
   }
 
   .carousel-caption {
-    display: block !important;
+    max-height: auto;
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
-    bottom: 10px;
+    bottom: auto;
+    top: 10px;
+    left: 5%;
+    right: 5%;
+    max-width: 90%;
   }
 
   .carousel-caption h5 {
@@ -386,4 +398,31 @@ footer {
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
+}
+
+/* Correctif spécifique pour iOS */
+@supports (-webkit-touch-callout: none) {
+  .carousel-caption {
+    position: absolute;
+    box-sizing: border-box;
+    max-height: 45%;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-caption {
+      position: absolute;
+      max-height: 40%;
+      width: 90%;
+    }
+  }
+}
+
+.ios-device .carousel-caption {
+  position: absolute !important;
+  max-height: 45% !important;
+  top: 15px !important;
+  bottom: auto !important;
+  width: 90% !important;
+  left: 5% !important;
+  right: 5% !important;
 }
