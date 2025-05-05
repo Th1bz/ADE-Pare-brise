@@ -1,0 +1,14 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "src": "offre_promo_salle_de_sport.jpeg",
+      "alt": "Promotion salle de sport"
+    },
+    {
+      "id": 2,
+      "src": "offre_promo_europapark.jpeg",
+      "alt": "Promotion Europapark"
+    }
+  ]
+}
