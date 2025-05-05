@@ -2,7 +2,7 @@
   "images": [
     {
       "id": 1,
-      "src": "assets/images/Cammionette_ADE_avant.jpeg",
+      "src": "assets/images/Camionette_ADE_avant.jpeg",
       "alt": "Remplacement pare-brise",
       "title": "",
       "description": ""
@@ -31,7 +31,7 @@
     {
       "id": 5,
       "src": "assets/images/Vitrage_fiat500.jpeg",
-      "alt": "Vitrage automobile",
+      "alt": "Changement de vitrage d'une Fiat 500",
       "title": "Vitrage automobile",
       "description": "Remplacement professionnel de pare-brise à domicile"
     },
@@ -51,8 +51,8 @@
     },
     {
       "id": 8,
-      "src": "assets/images/Camionette_ADE_arrière.jpeg",
-      "alt": "Vitrage camion",
+      "src": "assets/images/Camionette_ADE_arriere.jpeg",
+      "alt": "Vue arrière de la camionnette de l'entreprise",
       "title": "",
       "description": ""
     }
